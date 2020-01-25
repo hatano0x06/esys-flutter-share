@@ -1,5 +1,7 @@
 # esys_flutter_share
 
+# flutter create --org com.hhatamanga --template=plugin esys_flutter_share
+
 A [Flutter](https://flutter.io) plugin for sharing files & text with other applications.
 
 ## IMPORTANT Note for iOS

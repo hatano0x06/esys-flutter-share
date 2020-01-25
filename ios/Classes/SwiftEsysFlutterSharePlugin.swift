@@ -63,7 +63,22 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
         // present the view controller
         let controller = UIApplication.shared.keyWindow!.rootViewController as! FlutterViewController
         activityViewController.popoverPresentationController?.sourceView = controller.view
-        
+
+        var origin = CGRect.zero
+
+        let originX = argsMap.value(forKey: "originX") as! CGFloat
+        let originY = argsMap.value(forKey: "originY") as! CGFloat
+        let originWidth = argsMap.value(forKey: "originWidth") as! CGFloat
+        let originHeight = argsMap.value(forKey: "originHeight") as! CGFloat
+
+        if (originX != nil && originY != nil && originWidth != nil && originHeight != nil) {
+            origin = CGRect(x: originX, y: originY, width: originWidth, height: originHeight)
+        }
+
+        if (!origin.isEmpty ) {
+            activityViewController.popoverPresentationController?.sourceRect = origin;
+        }
+
         controller.show(activityViewController, sender: self)
     }
     
@@ -95,7 +110,23 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
         // present the view controller
         let controller = UIApplication.shared.keyWindow!.rootViewController as! FlutterViewController
         activityViewController.popoverPresentationController?.sourceView = controller.view
-        
+
+        var origin = CGRect.zero
+
+        let originX = argsMap.value(forKey: "originX") as! CGFloat
+        let originY = argsMap.value(forKey: "originY") as! CGFloat
+        let originWidth = argsMap.value(forKey: "originWidth") as! CGFloat
+        let originHeight = argsMap.value(forKey: "originHeight") as! CGFloat
+
+        if (originX != nil && originY != nil && originWidth != nil && originHeight != nil) {
+            origin = CGRect(x: originX, y: originY, width: originWidth, height: originHeight)
+        }
+
+        if (!origin.isEmpty ) {
+            activityViewController.popoverPresentationController?.sourceRect = origin;
+        }
+
+
         controller.show(activityViewController, sender: self)
     }
 }
